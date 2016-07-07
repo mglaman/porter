@@ -5,22 +5,53 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.project.body
+    - field.field.node.project.field_contrib_tracker
+    - field.field.node.project.field_contrib_tracker_status
+    - field.field.node.project.field_effort_leaders
+    - field.field.node.project.field_grouping
+    - field.field.node.project.field_project_machine_name
+    - field.field.node.project.field_project_page
     - node.type.project
   module:
-    - text
+    - link
     - user
 id: node.project.teaser
 targetEntityType: node
 bundle: project
 mode: teaser
 content:
-  body:
-    label: hidden
-    type: text_summary_or_trimmed
-    weight: 101
+  field_contrib_tracker:
+    type: link
+    weight: 5
+    label: above
     settings:
-      trim_length: 600
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
     third_party_settings: {  }
-  links:
-    weight: 100
-hidden: {  }
+  field_project_machine_name:
+    type: string
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_project_page:
+    type: link
+    weight: 1
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+hidden:
+  body: true
+  field_contrib_tracker_status: true
+  field_effort_leaders: true
+  field_grouping: true
+  links: true

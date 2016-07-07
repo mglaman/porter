@@ -43,9 +43,9 @@
  * @see html.html.twig
  */
 #}
-<div class="layout-container">
+<div class="container">
 
-  <header role="banner">
+  <header class="header" role="banner">
     {{ page.header }}
   </header>
 
@@ -60,28 +60,34 @@
 
   <main role="main" class="columns">
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+      <div class="column section">
+        <div class="container">
+          {{ page.content }}
+        </div>
+      </div>{# /.layout-content #}
 
-    <div class="column">
-      {{ page.content }}
-    </div>{# /.layout-content #}
+      {% if page.sidebar_first %}
+        <aside class="column is-3 section" role="complementary">
+          <div class="container">
+            {{ page.sidebar_first }}
+          </div>
+        </aside>
+      {% endif %}
 
-    {% if page.sidebar_first %}
-      <aside class="column is-3" role="complementary">
-        {{ page.sidebar_first }}
-      </aside>
-    {% endif %}
-
-    {% if page.sidebar_second %}
-      <aside class="column is-3" role="complementary">
-        {{ page.sidebar_second }}
-      </aside>
-    {% endif %}
-
+      {% if page.sidebar_second %}
+        <aside class="column is-3 section" role="complementary">
+          <div class="container">
+            {{ page.sidebar_second }}
+          </div>
+        </aside>
+      {% endif %}
   </main>
 
   {% if page.footer %}
-    <footer role="contentinfo">
-      {{ page.footer }}
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        {{ page.footer }}
+      </div>
     </footer>
   {% endif %}
 

@@ -1,4 +1,13 @@
-body {
-  width: 95%;
-  margin: 0 auto;
+.grouping--kanban-columns {
+  overflow: scroll;
+}
+.project--drupalorg-link {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#block-porter-local-tasks {
+  margin-bottom: 10px;
 }

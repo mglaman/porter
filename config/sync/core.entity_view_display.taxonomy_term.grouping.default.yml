@@ -5,24 +5,45 @@ dependencies:
   config:
     - field.field.taxonomy_term.grouping.field_project_grouping_plugin
     - taxonomy.vocabulary.grouping
-  module:
-    - pluginreference
-    - text
 id: taxonomy_term.grouping.default
 targetEntityType: taxonomy_term
 bundle: grouping
 mode: default
 content:
-  description:
-    label: hidden
-    type: text_default
+  contrib_tracker_status_10:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+  contrib_tracker_status_3:
     weight: 0
     settings: {  }
     third_party_settings: {  }
-  field_project_grouping_plugin:
-    weight: 1
-    label: above
+  contrib_tracker_status_4:
+    weight: 3
     settings: {  }
     third_party_settings: {  }
-    type: plugin_reference_id
-hidden: {  }
+  contrib_tracker_status_5:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+  contrib_tracker_status_6:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+  contrib_tracker_status_7:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+  contrib_tracker_status_8:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+  contrib_tracker_status_9:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  contrib_tracker_status_12: true
+  contrib_tracker_status_21: true
+  description: true
+  field_project_grouping_plugin: true

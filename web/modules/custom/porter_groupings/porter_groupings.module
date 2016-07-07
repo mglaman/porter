@@ -1,0 +1,81 @@
+<?php
+
+/**
+ * Implements hook_entity_extra_field_info().
+ */
+function porter_groupings_entity_extra_field_info() {
+  $extra = [];
+  $term_storage = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
+  /** @var \Drupal\taxonomy\TermInterface[] $terms */
+  $terms = $term_storage->loadByProperties(['vid' => 'contrib_tracker_status']);
+
+  foreach ($terms as $term) {
+    $extra['taxonomy_term']['grouping']['display']['contrib_tracker_status_' . $term->id()] = array(
+      'label' => $term->label(),
+      'description' => t('Display @type projects', ['@type' => $term->label()]),
+      'weight' => 10,
+      'visible' => TRUE,
+    );
+  }
+
+  return $extra;
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ */
+function porter_groupings_taxonomy_term_view(array &$build, \Drupal\taxonomy\TermInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display, $view_mode) {
+  $term_storage = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
+  /** @var \Drupal\taxonomy\TermInterface[] $terms */
+  $terms = $term_storage->loadByProperties(['vid' => 'contrib_tracker_status']);
+
+  foreach ($terms as $term) {
+    $component_key = 'contrib_tracker_status_' . $term->id();
+    if ($display->getComponent($component_key)) {
+
+      $build[$component_key] = [
+        '#type' => 'view',
+        '#name' => 'contrib_tracker_projects',
+        '#display_id' => 'embed_1',
+        '#arguments' => [$term->id(), $entity->id()],
+        '#embed' => TRUE,
+        '#title' => $term->label(),
+        '#attributes' => [
+          'class' => ['column', 'is-4']
+        ],
+        '#pre_render' => [
+          ['\Drupal\views\Element\View', 'preRenderViewElement'],
+          'porter_groupings_views_add_title_pre_render',
+        ],
+      ];
+    }
+  }
+}
+
+
+/**
+ * Pre render callback for profile embedded views to ensure a title is set.
+ * @param $element
+ *
+ * @return mixed
+ */
+function porter_groupings_views_add_title_pre_render($element) {
+  /** @var \Drupal\views\ViewExecutable $view */
+  if (isset($element['#title'])) {
+    $view = $element['view_build']['#view'];
+    $view->setTitle($element['#title']);
+  }
+
+  return $element;
+}
+
+function porter_groupings_preprocess_views_view(&$variables) {
+  /** @var \Drupal\views\ViewExecutable $view */
+  $view = $variables['view'];
+  if ($view->id() == 'contrib_tracker_projects') {
+    $variables['title'] = $view->getTitle();
+    $variables['title_prefix'] = ['#markup' => '<h2 class="title is-4">'];
+    $variables['title_suffix'] = ['#markup' => '</h2>'];
+    $stio = null;
+  }
+}
