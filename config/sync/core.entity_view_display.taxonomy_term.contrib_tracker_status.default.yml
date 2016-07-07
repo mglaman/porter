@@ -1,0 +1,28 @@
+uuid: be6e620a-c0ea-406c-a50b-1e3b192a40c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.contrib_tracker_status.field_remote_status_id
+    - taxonomy.vocabulary.contrib_tracker_status
+  module:
+    - text
+id: taxonomy_term.contrib_tracker_status.default
+targetEntityType: taxonomy_term
+bundle: contrib_tracker_status
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+  field_remote_status_id:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+hidden: {  }

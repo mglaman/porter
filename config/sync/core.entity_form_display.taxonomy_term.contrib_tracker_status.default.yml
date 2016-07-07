@@ -1,0 +1,36 @@
+uuid: cb8675d0-8343-4a03-a4d9-854ea3ac495d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.contrib_tracker_status.field_remote_status_id
+    - taxonomy.vocabulary.contrib_tracker_status
+  module:
+    - text
+id: taxonomy_term.contrib_tracker_status.default
+targetEntityType: taxonomy_term
+bundle: contrib_tracker_status
+mode: default
+content:
+  description:
+    type: text_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_remote_status_id:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  name:
+    type: string_textfield
+    weight: -5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

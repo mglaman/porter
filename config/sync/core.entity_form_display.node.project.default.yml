@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.project.field_grouping
     - field.field.node.project.field_project_machine_name
     - field.field.node.project.field_project_page
+    - field.field.node.project.field_project_tags
     - node.type.project
   module:
     - link
@@ -76,6 +77,14 @@ content:
       placeholder_title: ''
     third_party_settings: {  }
     type: link_default
+  field_project_tags:
+    weight: 33
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
   promote:
     type: boolean_checkbox
     settings:
