@@ -1,6 +1,6 @@
 uuid: 19c395d4-6125-4da3-a6df-9a0fd5423b90
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - system.menu.admin
@@ -12,8 +12,8 @@ _core:
   default_config_hash: DWAB7HaAfAJerAmyT8B2K-6qxicu9n0PcKVpDr--N4c
 id: porter_admin
 theme: porter
-region: sidebar_first
-weight: 1
+region: '-1'
+weight: -1
 provider: null
 plugin: 'system_menu_block:admin'
 settings:

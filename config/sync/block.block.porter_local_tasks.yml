@@ -9,7 +9,7 @@ _core:
 id: porter_local_tasks
 theme: porter
 region: content
-weight: -20
+weight: -4
 provider: null
 plugin: local_tasks_block
 settings:

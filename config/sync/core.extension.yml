@@ -13,6 +13,8 @@ module:
   node: 0
   page_cache: 0
   pluginreference: 0
+  porter_groupings: 0
+  porter_projects: 0
   porter_scraper: 0
   system: 0
   taxonomy: 0
@@ -20,6 +22,8 @@ module:
   toolbar: 0
   update: 0
   user: 0
+  views: 0
+  views_ui: 0
   minimal: 1000
 theme:
   stark: 0
