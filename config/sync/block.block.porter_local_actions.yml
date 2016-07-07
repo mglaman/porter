@@ -1,0 +1,20 @@
+uuid: 4c8fe601-959c-477b-b066-e7a2c54e2f19
+langcode: en
+status: true
+dependencies:
+  theme:
+    - porter
+_core:
+  default_config_hash: PffmQ-ABSz5tFjWmVsR7NesunDnEivvopnJnBjl8KNE
+id: porter_local_actions
+theme: porter
+region: content
+weight: -10
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

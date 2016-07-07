@@ -1,0 +1,4 @@
+services:
+  plugin.manager.project_grouping:
+    class: Drupal\porter_scraper\ProjectGroupingManager
+    arguments: ['@module_handler', '@cache.discovery']

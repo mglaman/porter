@@ -1,0 +1,23 @@
+uuid: 2e70ebe1-de5b-4600-a34a-4e348651f278
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contrib_tracker
+    - node.type.project
+  module:
+    - link
+id: node.project.field_contrib_tracker
+field_name: field_contrib_tracker
+entity_type: node
+bundle: project
+label: 'Contrib tracker'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link

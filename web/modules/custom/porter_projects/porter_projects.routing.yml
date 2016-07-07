@@ -1,0 +1,8 @@
+porter_projects.project_without_status:
+  path: '/taxonomy/term/{taxonomy_term}/no-status'
+  defaults:
+    _title: 'Projects without status'
+    _controller: 'Drupal\porter_projects\Controller\ProjectWithoutStatusController::output'
+  requirements:
+    _entity_access: 'taxonomy_term.view'
+    taxonomy_term: \d+

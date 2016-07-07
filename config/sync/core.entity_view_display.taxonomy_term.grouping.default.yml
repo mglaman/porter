@@ -1,0 +1,28 @@
+uuid: 0bbf69ec-0b95-448d-beb2-6520934021b4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.grouping.field_project_grouping_plugin
+    - taxonomy.vocabulary.grouping
+  module:
+    - pluginreference
+    - text
+id: taxonomy_term.grouping.default
+targetEntityType: taxonomy_term
+bundle: grouping
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+  field_project_grouping_plugin:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: plugin_reference_id
+hidden: {  }

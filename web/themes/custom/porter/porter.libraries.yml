@@ -1,0 +1,26 @@
+global-styling:
+  version: VERSION
+  css:
+    base:
+      css/base.css: {  }
+  dependencies:
+    - porter/bulma
+    - porter/fontawesome
+fontawesome:
+  version: 4.4.0
+  license:
+    name: SIL OFL 1.1
+    url: http://fontawesome.io/license/
+    gpl-compatible: true
+  css:
+    base:
+      bower_components/font-awesome/css/font-awesome.min.css: { minified: true }
+bulma:
+  version: 0.1.0
+  license:
+    name: MIT
+    url: http://fontawesome.io/license/
+    gpl-compatible: true
+  css:
+    base:
+      bower_components/bulma/css/bulma.css: { minified: true }

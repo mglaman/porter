@@ -1,0 +1,9 @@
+uuid: bf5482b2-7add-4abf-9e99-11495935f5b3
+langcode: en
+status: true
+dependencies: {  }
+name: 'Contrib Tracker Status'
+vid: contrib_tracker_status
+description: 'Status as represented on contrib_tracker'
+hierarchy: 0
+weight: 0

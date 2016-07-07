@@ -1,0 +1,10 @@
+name: Porter Scraper
+description: Scrapes different services to aggregate data.
+type: module
+core: 8.x
+dependencies:
+  - taxonomy
+  - node
+  - user
+  - porter_groupings
+  - porter_projects

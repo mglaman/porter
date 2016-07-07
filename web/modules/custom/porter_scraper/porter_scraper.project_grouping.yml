@@ -1,0 +1,12 @@
+commerce:
+  id: commerce
+  label: "Drupal Commerce"
+  regex:
+    machine_name: 'commerce_|dc_'
+    contrib_tracker: '(\[commerce_[a-z_]*\]|\[dc_[a-z_]*\]) (.*)'
+workbench:
+  id: workbench
+  label: "Workbench Moderation"
+  regex:
+    machine_name: 'workbench_'
+    contrib_tracker: '(\[workbench_[a-z_]*\]) (.*)'

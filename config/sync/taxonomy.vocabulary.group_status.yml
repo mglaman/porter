@@ -1,0 +1,9 @@
+uuid: 37b6007e-0ecd-47fe-953e-6d4729eed07e
+langcode: en
+status: true
+dependencies: {  }
+name: 'Group status'
+vid: group_status
+description: 'Porting status as concerned to the group effort'
+hierarchy: 0
+weight: 0

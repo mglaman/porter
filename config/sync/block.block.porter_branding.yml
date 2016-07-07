@@ -1,0 +1,25 @@
+uuid: 936247ad-38ee-4fd3-97fc-a402c1682d22
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - porter
+_core:
+  default_config_hash: fRKXNB91UxDvEMkzCR8ZBsawfC6Fqbme2gtobei3gu4
+id: porter_branding
+theme: porter
+region: header
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

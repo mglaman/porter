@@ -1,0 +1,20 @@
+uuid: 2c26988c-3fdb-4050-9a24-d8bb493300ff
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_grouping
+field_name: field_grouping
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

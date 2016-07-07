@@ -1,0 +1,23 @@
+uuid: e8f64d11-8a29-482c-9d4e-cc2cd90f7718
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_project_grouping_plugin
+    - taxonomy.vocabulary.grouping
+  module:
+    - pluginreference
+id: taxonomy_term.grouping.field_project_grouping_plugin
+field_name: field_project_grouping_plugin
+entity_type: taxonomy_term
+bundle: grouping
+label: 'Project grouping plugin'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: commerce
+default_value_callback: ''
+settings: {  }
+field_type: plugin_reference

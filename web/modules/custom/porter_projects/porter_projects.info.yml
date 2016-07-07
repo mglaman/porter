@@ -1,0 +1,4 @@
+name: Porter Projects
+description: Provides project stuff.
+type: module
+core: 8.x

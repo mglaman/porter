@@ -1,0 +1,9 @@
+uuid: 481ad0d4-ee2f-4658-9356-a6c9547cf689
+langcode: en
+status: true
+dependencies: {  }
+name: Grouping
+vid: grouping
+description: 'A grouping helps organize modules as part of an initiative or sub-ecosystem.'
+hierarchy: 0
+weight: 0

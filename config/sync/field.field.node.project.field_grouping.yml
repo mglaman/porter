@@ -1,0 +1,28 @@
+uuid: b7ac8ed6-ec18-45e3-8db4-364147133803
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_grouping
+    - node.type.project
+    - taxonomy.vocabulary.grouping
+id: node.project.field_grouping
+field_name: field_grouping
+entity_type: node
+bundle: project
+label: Grouping
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      grouping: grouping
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

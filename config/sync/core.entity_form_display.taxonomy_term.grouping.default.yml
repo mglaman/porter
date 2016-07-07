@@ -1,0 +1,35 @@
+uuid: b78079de-0039-4d7e-9522-a8775e6a7d83
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.grouping.field_project_grouping_plugin
+    - taxonomy.vocabulary.grouping
+  module:
+    - pluginreference
+    - text
+id: taxonomy_term.grouping.default
+targetEntityType: taxonomy_term
+bundle: grouping
+mode: default
+content:
+  description:
+    type: text_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_project_grouping_plugin:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: plugin_reference_select
+  name:
+    type: string_textfield
+    weight: -5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

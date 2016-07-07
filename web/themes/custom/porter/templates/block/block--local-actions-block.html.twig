@@ -1,0 +1,16 @@
+{% extends "block.html.twig" %}
+{#
+/**
+ * @file
+ * Theme override for local actions (primary admin actions.)
+ */
+#}
+{% block content %}
+  {% if content %}
+    <nav class="nav has-shadow">
+      <div class="container">
+        <div class="nav-left">{{ content }}</div>
+      </div>
+    </nav>
+  {% endif %}
+{% endblock %}

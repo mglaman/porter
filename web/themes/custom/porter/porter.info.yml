@@ -1,0 +1,25 @@
+name: Porter Theme
+type: theme
+base theme: stable
+description: 'A flexible, recolorable theme with many regions and a responsive, mobile-first layout.'
+package: Porter
+version: VERSION
+core: 8.x
+libraries:
+  - 'porter/global-styling'
+  - 'porter/fontawesome'
+  - 'porter/bulma'
+regions:
+  header: Header
+  primary_menu: 'Primary menu'
+  secondary_menu: 'Secondary menu'
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+  highlighted: Highlighted
+  featured_top: 'Featured top'
+  breadcrumb: Breadcrumb
+  content: Content
+  sidebar_first: 'Sidebar first'
+  sidebar_second: 'Sidebar second'
+  footer_first: 'Footer first'
+  footer_second: 'Footer second'

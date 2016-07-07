@@ -1,0 +1,19 @@
+uuid: 2d9ff6fb-06b7-4166-a0dc-dd4549f52c7b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_effort_leaders
+    - node.type.project
+id: node.project.field_effort_leaders
+field_name: field_effort_leaders
+entity_type: node
+bundle: project
+label: 'Effort leaders'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

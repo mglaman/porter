@@ -1,0 +1,20 @@
+uuid: 1a7af5aa-1085-4807-b90e-6f568d014126
+langcode: en
+status: true
+dependencies:
+  module:
+    - pluginreference
+    - taxonomy
+id: taxonomy_term.field_project_grouping_plugin
+field_name: field_project_grouping_plugin
+entity_type: taxonomy_term
+type: plugin_reference
+settings:
+  target_type: project_grouping
+module: pluginreference
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
