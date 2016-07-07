@@ -41,7 +41,7 @@ function porter_groupings_taxonomy_term_view(array &$build, \Drupal\taxonomy\Ter
         '#embed' => TRUE,
         '#title' => $term->label(),
         '#attributes' => [
-          'class' => ['column', 'is-4']
+          'class' => ['column', 'is-3']
         ],
         '#pre_render' => [
           ['\Drupal\views\Element\View', 'preRenderViewElement'],

@@ -43,7 +43,7 @@
  * @see html.html.twig
  */
 #}
-<div class="container">
+<div class="container is-fluid">
 
   <header class="header" role="banner">
     {{ page.header }}
@@ -61,14 +61,14 @@
   <main role="main" class="columns">
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
       <div class="column section">
-        <div class="container">
+        <div class="container is-fluid">
           {{ page.content }}
         </div>
       </div>{# /.layout-content #}
 
       {% if page.sidebar_first %}
         <aside class="column is-3 section" role="complementary">
-          <div class="container">
+          <div class="container is-fluid">
             {{ page.sidebar_first }}
           </div>
         </aside>
@@ -76,7 +76,7 @@
 
       {% if page.sidebar_second %}
         <aside class="column is-3 section" role="complementary">
-          <div class="container">
+          <div class="container is-fluid">
             {{ page.sidebar_second }}
           </div>
         </aside>
