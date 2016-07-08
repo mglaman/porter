@@ -7,8 +7,8 @@ class ContribTrackerScraper extends RemoteScraperBase {
   protected $trackerStatusMap = [
     1 => 'No port started',
     13 => 'Port in development',
-    8 => 'Alpha or Beta D8 releases available',
-    14 => 'Release Candidate (RC) release',
+    8 => 'Alpha or Beta',
+    14 => 'Release Candidate (RC)',
     2 => 'Stable release',
     7 => 'Stable release',
     4 => 'Port is blocked',
@@ -74,8 +74,15 @@ class ContribTrackerScraper extends RemoteScraperBase {
 
         if (!empty($results)) {
           $node = $node_storage->load(reset($results));
+
+          // Fixed and Closed (Fixed) are same thing.
+          $issue_status = $item->field_issue_status;
+          if ($issue_status == 2) {
+            $issue_status = 7;
+          }
+
           $node->field_contrib_tracker_status = [
-            'target_id' => $this->taxonomyMap[$item->field_issue_status]->id()
+            'target_id' => $this->taxonomyMap[$issue_status]->id()
           ];
           $node->field_contrib_tracker = [
             'uri' => $item->url,

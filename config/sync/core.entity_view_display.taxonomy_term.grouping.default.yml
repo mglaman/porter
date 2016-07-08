@@ -30,20 +30,15 @@ content:
     weight: 5
     settings: {  }
     third_party_settings: {  }
-  contrib_tracker_status_7:
-    weight: 7
-    settings: {  }
-    third_party_settings: {  }
+
   contrib_tracker_status_8:
     weight: 6
-    settings: {  }
-    third_party_settings: {  }
-  contrib_tracker_status_9:
-    weight: 2
     settings: {  }
     third_party_settings: {  }
 hidden:
   contrib_tracker_status_12: true
   contrib_tracker_status_21: true
+  contrib_tracker_status_9: true
+  contrib_tracker_status_7: true
   description: true
   field_project_grouping_plugin: true
