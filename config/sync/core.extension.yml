@@ -2,6 +2,7 @@ module:
   block: 0
   breakpoint: 0
   config: 0
+  ctools: 0
   dblog: 0
   devel: 0
   dynamic_page_cache: 0
@@ -15,6 +16,7 @@ module:
   menu_ui: 0
   node: 0
   page_cache: 0
+  path: 0
   pluginreference: 0
   porter_groupings: 0
   porter_projects: 0
@@ -22,11 +24,13 @@ module:
   system: 0
   taxonomy: 0
   text: 0
+  token: 0
   toolbar: 0
   update: 0
   user: 0
   views: 0
   views_ui: 0
+  pathauto: 1
   minimal: 1000
 theme:
   stark: 0

@@ -41,7 +41,7 @@ function porter_groupings_taxonomy_term_view(array &$build, \Drupal\taxonomy\Ter
         '#embed' => TRUE,
         '#title' => $term->label(),
         '#attributes' => [
-          'class' => ['column', 'is-3']
+          'class' => ['column', 'is-2']
         ],
         '#pre_render' => [
           ['\Drupal\views\Element\View', 'preRenderViewElement'],
@@ -73,7 +73,7 @@ function porter_groupings_preprocess_views_view(&$variables) {
   $view = $variables['view'];
   if ($view->id() == 'contrib_tracker_projects') {
     $variables['title'] = $view->getTitle();
-    $variables['title_prefix'] = ['#markup' => '<h2 class="title is-4">'];
+    $variables['title_prefix'] = ['#markup' => '<h2 class="title is-5">'];
     $variables['title_suffix'] = ['#markup' => '</h2>'];
     $stio = null;
   }
