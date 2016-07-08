@@ -52,7 +52,6 @@ function porter_groupings_taxonomy_term_view(array &$build, \Drupal\taxonomy\Ter
   }
 }
 
-
 /**
  * Pre render callback for profile embedded views to ensure a title is set.
  * @param $element

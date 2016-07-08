@@ -2,3 +2,9 @@ services:
   plugin.manager.project_grouping:
     class: Drupal\porter_scraper\ProjectGroupingManager
     arguments: ['@module_handler', '@cache.discovery']
+  porter_scraper.scraper.contrib_tracker:
+    class: Drupal\porter_scraper\Scraper\ContribTrackerScraper
+    arguments: ['@http_client_factory', '@entity_type.manager', '@plugin.manager.project_grouping']
+  porter_scraper.scraper.module_projects:
+    class: Drupal\porter_scraper\Scraper\ModuleProjectsScraper
+    arguments: ['@http_client_factory', '@entity_type.manager', '@plugin.manager.project_grouping']
