@@ -43,52 +43,57 @@
  * @see html.html.twig
  */
 #}
-<div class="container is-fluid">
+<header class="hero is-info is-bold" role="banner">
+  <div class="container is-fluid">
+    <div class="hero-head">
+      <div class="container is-fluid">
+        <nav class="nav">
+          <div class="nav-left">
+            {{ page.primary_menu }}
+          </div>
+          <div class="nav-center">
+            <a class="nav-item" href="https://github.com/mglaman/porter">
+              <span class="icon"><i class="fa fa-github"></i></span>
+            </a>
+            <a class="nav-item" href="https://twitter.com/nmdmatt">
+              <span class="icon"><i class="fa fa-twitter"></i></span>
+            </a>
+            <a class="nav-item" href="https://www.drupal.org/u/mglaman">
+              <span class="icon"><i class="fa fa-drupal"></i></span>
+            </a>
+          </div>
+          <div class="nav-right">
+            {{ page.secondary_menu }}
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="hero-body">
+      <div class="container is-fluid">
+        {{ page.header }}
+      </div>
+    </div>
+  </div>
+</header>
 
-  <header class="header" role="banner">
-    {{ page.header }}
-  </header>
-
-  {{ page.primary_menu }}
-  {{ page.secondary_menu }}
-
-  {{ page.breadcrumb }}
+{{ page.breadcrumb }}
 
   {{ page.highlighted }}
 
   {{ page.help }}
 
-  <main role="main" class="columns">
+<main role="main" class="section">
+  <div class="container is-fluid">
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
-      <div class="column section">
-        <div class="container is-fluid">
-          {{ page.content }}
-        </div>
-      </div>{# /.layout-content #}
+    {{ page.content }}
+  </div>
+</main>
 
-      {% if page.sidebar_first %}
-        <aside class="column is-3 section" role="complementary">
-          <div class="container is-fluid">
-            {{ page.sidebar_first }}
-          </div>
-        </aside>
-      {% endif %}
+{% if page.footer %}
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      {{ page.footer }}
+    </div>
+  </footer>
+{% endif %}
 
-      {% if page.sidebar_second %}
-        <aside class="column is-3 section" role="complementary">
-          <div class="container is-fluid">
-            {{ page.sidebar_second }}
-          </div>
-        </aside>
-      {% endif %}
-  </main>
-
-  {% if page.footer %}
-    <footer class="footer" role="contentinfo">
-      <div class="container">
-        {{ page.footer }}
-      </div>
-    </footer>
-  {% endif %}
-
-</div>{# /.layout-container #}

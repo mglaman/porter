@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.teaser
     - field.storage.node.field_contrib_tracker
     - node.type.project
     - taxonomy.vocabulary.contrib_tracker_status
@@ -75,16 +76,14 @@ display:
       style:
         type: default
         options:
-          row_class: 'card column is-half'
+          row_class: 'column is-one-third'
           default_row_class: false
           uses_fields: false
       row:
-        type: fields
+        type: 'entity:node'
         options:
-          default_field_elements: true
-          inline: {  }
-          separator: ''
-          hide_empty: false
+          relationship: none
+          view_mode: teaser
       fields:
         title:
           id: title

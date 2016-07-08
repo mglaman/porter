@@ -11,6 +11,8 @@ module:
   filter: 0
   kint: 0
   link: 0
+  menu_link_content: 0
+  menu_ui: 0
   node: 0
   page_cache: 0
   pluginreference: 0

@@ -1,0 +1,24 @@
+uuid: 355d7a9f-f06e-448a-854d-55baa391f883
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main-menu
+  module:
+    - system
+  theme:
+    - porter
+id: mainmenu
+theme: porter
+region: primary_menu
+weight: -5
+provider: null
+plugin: 'system_menu_block:main-menu'
+settings:
+  id: 'system_menu_block:main-menu'
+  label: 'Main menu'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility: {  }

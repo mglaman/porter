@@ -1,7 +1,7 @@
 uuid: 1e6703e9-9173-4ba9-b0d8-3e2e1f001cf0
-name: Site-Install
+name: Porter
 mail: admin@example.com
-slogan: ''
+slogan: 'Drupal 8 port tracking'
 page:
   403: ''
   404: ''
