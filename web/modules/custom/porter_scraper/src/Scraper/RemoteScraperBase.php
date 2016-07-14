@@ -58,6 +58,7 @@ abstract class RemoteScraperBase {
     while (isset($data->next) && $this->currentPage < $this->pageLimit) {
       $next_url = str_replace('/node', '/node.json', $data->next);
       $data = $this->getData($next_url);
+      sleep(rand(10,45));
       $this->processList($data->list);
     }
 
