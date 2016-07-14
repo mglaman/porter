@@ -8,8 +8,8 @@ dependencies:
     - node.type.project
     - taxonomy.vocabulary.contrib_tracker_status
   content:
-    - 'taxonomy_term:contrib_tracker_status:32e3cd95-a4ce-4e8b-b051-7f2c457e3df1'
-    - 'taxonomy_term:contrib_tracker_status:44107520-755c-4344-bc34-efb585e421a7'
+    - 'taxonomy_term:contrib_tracker_status:16c76069-7871-4bd6-a66b-8a7932687169'
+    - 'taxonomy_term:contrib_tracker_status:eef585b8-b774-4297-a445-280279a1de59'
   module:
     - link
     - node
@@ -247,7 +247,7 @@ display:
           admin_label: ''
           operator: or
           value:
-            21: 21
+            11: 11
             12: 12
           group: 1
           exposed: false

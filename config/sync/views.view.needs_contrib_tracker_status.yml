@@ -6,9 +6,11 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.storage.node.field_project_page
     - node.type.project
+    - taxonomy.vocabulary.contrib_tracker_status
   module:
     - link
     - node
+    - taxonomy
     - user
 id: needs_contrib_tracker_status
 label: 'Needs Contrib Tracker Status'
@@ -233,6 +235,49 @@ display:
           entity_type: node
           entity_field: type
           plugin_id: bundle
+        field_contrib_tracker_status_target_id:
+          id: field_contrib_tracker_status_target_id
+          table: node__field_contrib_tracker_status
+          field: field_contrib_tracker_status_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: empty
+          value: {  }
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: textfield
+          limit: true
+          vid: contrib_tracker_status
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
       sorts:
         title:
           id: title
@@ -298,6 +343,7 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
@@ -326,6 +372,7 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
