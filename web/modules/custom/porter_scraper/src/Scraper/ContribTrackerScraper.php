@@ -22,6 +22,10 @@ class ContribTrackerScraper extends RemoteScraperBase {
    */
   protected $taxonomyMap = [];
 
+  public function getId() {
+    return 'contrib_tracker';
+  }
+
   protected function preRun() {
     // Find taxonomy terms referencing our mapping.
     $term_storage = $this->entityTypeManager->getStorage('taxonomy_term');
@@ -50,7 +54,7 @@ class ContribTrackerScraper extends RemoteScraperBase {
 
 
   protected function getRemoteUrl() {
-    return 'https://www.drupal.org/api-d7/node.json?type=project_issue&field_project=2573607&page=0';
+    return 'https://www.drupal.org/api-d7/node.json?type=project_issue&field_project=2573607&page=' . $this->currentPage;
   }
 
   protected function processList($list) {
@@ -88,6 +92,7 @@ class ContribTrackerScraper extends RemoteScraperBase {
             'uri' => $item->url,
           ];
           $node->save();
+          \Drupal::logger('contrib_tracker_craper')->info("Updated {$node->label()} contrib tracker status.");
         }
       }
     }

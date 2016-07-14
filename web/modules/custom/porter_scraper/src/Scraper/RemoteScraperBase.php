@@ -45,6 +45,8 @@ abstract class RemoteScraperBase {
     $this->entityTypeManager = $entity_type_manager;
     $this->projectGroupingManager = $project_grouping_manager;
     $this->pageLimit = $page_limit;
+
+    $this->currentPage = \Drupal::state()->get($this->getId() . '_last_page', 0);
   }
 
   public function run() {
@@ -56,12 +58,14 @@ abstract class RemoteScraperBase {
 
     // While our current page count is less than total, keep going.
     while (isset($data->next) && $this->currentPage < $this->pageLimit) {
+      sleep(rand(1,3));
       $next_url = str_replace('/node', '/node.json', $data->next);
       $data = $this->getData($next_url);
-      sleep(rand(10,45));
+      $this->currentPage++;
       $this->processList($data->list);
     }
 
+    \Drupal::state()->delete($this->getId() . '_last_page');
     $this->postRun();
   }
 
@@ -91,7 +95,13 @@ abstract class RemoteScraperBase {
    */
   protected function getData($url) {
     $response = $this->client->get($url);
+    if ($response->getStatusCode() != 200) {
+      \Drupal::state()->set($this->getId() . '_last_page', $this->currentPage);
+      throw new \Exception("The service has returned a faulty status code.");
+    }
     $data = json_decode($response->getBody()->getContents());
     return $data;
   }
+
+  abstract public function getId();
 }

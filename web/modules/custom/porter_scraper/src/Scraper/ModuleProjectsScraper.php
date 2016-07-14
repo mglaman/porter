@@ -16,6 +16,10 @@ class ModuleProjectsScraper extends RemoteScraperBase {
    */
   protected $nodeStorage;
 
+  public function getId() {
+    return 'project_scraper';
+  }
+
   protected function preRun() {
     $this->nodeStorage = $this->entityTypeManager->getStorage('node');
 
@@ -36,7 +40,7 @@ class ModuleProjectsScraper extends RemoteScraperBase {
 
 
   protected function getRemoteUrl() {
-    return 'https://www.drupal.org/api-d7/node.json?type=project_module&page=0';
+    return 'https://www.drupal.org/api-d7/node.json?type=project_module&page=' . $this->currentPage;
   }
 
   protected function processList($list) {
@@ -68,6 +72,7 @@ class ModuleProjectsScraper extends RemoteScraperBase {
       }
       $node = $this->nodeStorage->create($values);
       $node->save();
+      \Drupal::logger('project_craper')->info("Created {$node->label()}.");
     }
   }
 }
