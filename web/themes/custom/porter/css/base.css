@@ -1,7 +1,7 @@
 .grouping--kanban-columns {
   overflow: scroll;
 }
-.project--drupalorg-link {
+.project__link {
   width: 100%;
   white-space: nowrap;
   overflow: hidden;

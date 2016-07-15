@@ -37,6 +37,6 @@
  */
 #}
 
-    {% for item in items %}
-      <div{{ item.attributes.addClass('project--drupalorg', 'project__link', 'is-inline') }}>{{ item.content }}</div>
-    {% endfor %}
+{% for item in items %}
+  <div{{ item.attributes.addClass('project--contrib-tracker', 'project__link', 'is-inline') }}>{{ item.content }}</div>
+{% endfor %}

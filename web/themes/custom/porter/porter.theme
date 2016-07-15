@@ -25,3 +25,25 @@ function porter_preprocess_menu_local_action(&$variables) {
     '#url' => $link['url'],
   );
 }
+
+
+function porter_preprocess_field(array &$variables, $hook) {
+  switch ($variables['field_name']) {
+    case 'field_contrib_tracker':
+      $variables['items'][0]['content']['#title'] = t('Contrib tracker');
+      $variables['items'][0]['content']['#options']['attributes']['class'][] = 'button';
+      $variables['items'][0]['content']['#options']['attributes']['class'][] = 'is-small';
+      $variables['items'][0]['content']['#options']['attributes']['class'][] = 'is-dark';
+      // tag is-primary
+      break;
+    case 'field_project_page':
+      /** @var Drupal\node\NodeInterface $project */
+      $project = $variables['element']['#object'];
+      $variables['items'][0]['content']['#title'] = $project->field_project_machine_name->value;
+      $variables['items'][0]['content']['#options']['attributes']['class'][] = 'button';
+      $variables['items'][0]['content']['#options']['attributes']['class'][] = 'is-small';
+      $variables['items'][0]['content']['#options']['attributes']['class'][] = 'is-primary';
+      // tag is-primary
+      break;
+  }
+}

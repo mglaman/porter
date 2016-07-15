@@ -32,13 +32,6 @@ content:
       url_plain: false
       rel: '0'
     third_party_settings: {  }
-  field_project_machine_name:
-    type: string
-    weight: 0
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
   field_project_page:
     type: link
     weight: 1
@@ -59,6 +52,7 @@ content:
     third_party_settings: {  }
 hidden:
   body: true
+  field_project_machine_name: true
   field_contrib_tracker_status: true
   field_effort_leaders: true
   field_grouping: true
