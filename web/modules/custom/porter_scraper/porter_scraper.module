@@ -5,8 +5,7 @@
  * Implements hook_cron().
  */
 function porter_scraper_cron() {
-  \Drupal::service('porter_scraper.scraper.module_projects')
-    ->run();
+  // \Drupal::service('porter_scraper.scraper.module_projects')->run();
   \Drupal::service('porter_scraper.scraper.contrib_tracker')
     ->run();
 }
