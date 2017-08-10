@@ -1,0 +1,13 @@
+services:
+  porter_scraper.porter_scrape_projects:
+    class: Drupal\porter_scraper\Command\ProjectScraperCommand
+    arguments: ['@porter_scraper.scraper.module_projects']
+    tags:
+      - { name: drupal.command }
+
+  porter_scraper.porter_scraper_contrib-tracker:
+    class: Drupal\porter_scraper\Command\ContribTrackerScraperCommand
+    arguments: ['@porter_scraper.scraper.contrib_tracker']
+    tags:
+      - { name: drupal.command }
+
