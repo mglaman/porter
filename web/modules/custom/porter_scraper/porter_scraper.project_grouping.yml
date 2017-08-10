@@ -14,5 +14,5 @@ panels:
   id: panels
   label: "Panels"
   regex:
-    machine_name: 'panels'
+    machine_name: 'panel'
     contrib_tracker: '(\[panel[a-z_]*\]) (.*)'
