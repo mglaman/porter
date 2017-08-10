@@ -2,11 +2,17 @@ commerce:
   id: commerce
   label: "Drupal Commerce"
   regex:
-    machine_name: 'commerce_|dc_'
-    contrib_tracker: '(\[commerce_[a-z_]*\]|\[dc_[a-z_]*\]) (.*)'
+    machine_name: 'commerce|commerce_|dc_'
+    contrib_tracker: '(\[commerce[a-z_]*\]|\[dc_[a-z_]*\]) (.*)'
 workbench:
   id: workbench
   label: "Workbench Moderation"
   regex:
     machine_name: 'workbench_'
     contrib_tracker: '(\[workbench_[a-z_]*\]) (.*)'
+panels:
+  id: panels
+  label: "Panels"
+  regex:
+    machine_name: 'panels'
+    contrib_tracker: '(\[panel[a-z_]*\]) (.*)'
