@@ -11,13 +11,13 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-          - composer-{{ checksum "composer.json" }}
-          # fallback to using the latest cache if no exact match is found
-          - composer-
+            - composer-{{ checksum "composer.json" }}
+            - composer-
       - run: composer install -n --prefer-dist
       - save_cache:
           paths:
             - ./vendor
+            - ~/.composer/cache
           key: composer-{{ checksum "composer.json" }}
       # - ./bin/phpunit
   deploy:
@@ -31,7 +31,7 @@ jobs:
 
 workflows:
   version: 2
-  build-deploy:
+  build_and_deploy:
     jobs:
       - build
       - deploy:

@@ -1,9 +1,8 @@
-# Porter
+# Porter [![CircleCI](https://circleci.com/gh/mglaman/porter.svg?style=svg)](https://circleci.com/gh/mglaman/porter)
 
 Porter is a Drupal 8 site that scrapes the Drupal.org project list and the contrib tracker project.
 
-The goal is to provide something similar to ContribKanban.com, but for porting contributed projects in Drupal's various
-microcosms. This can be used to: see porting status, help reduce duplicate efforts, find ways to deprecate contributed
+The goal is to provide something similar to ContribKanban.com, but for porting contributed projects in Drupal's various microcosms. This can be used to: see porting status, help reduce duplicate efforts, find ways to deprecate contributed
 project requirements.
 
 ## Install
