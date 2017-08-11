@@ -19,14 +19,14 @@ jobs:
             - ./vendor
             - ~/.composer/cache
           key: composer-{{ checksum "composer.json" }}
-      # - ./bin/phpunit
+      - run: ./bin/phpunit web/modules/custom/
   deploy:
     docker:
       - image: circleci/python:2.7
     steps:
       - checkout
-      - run: pip install ansible
-      - run: pip install --upgrade setuptools
+      - run: pip install --upgrade setuptools --user
+      - run: pip install ansible --user
       - run: ansible-playbook -i .circleci/inventory -e .circleci/playbook.yml
 
 workflows:
