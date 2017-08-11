@@ -13,15 +13,10 @@
       register: deploy_repo_updated
       become: no
 
-    - name: Check if a composer.json file is present.
-      stat: "path=/var/www/porter/web/composer.json"
-      register: deploy_composer_file
-
-    - name: Run composer install if composer.json is present.
+    - name: Run composer install.
       composer:
         command: install
         working_dir: "/var/www/porter"
-      when: deploy_composer_file.stat.exists == true
       become: no
 
     - name: Define deploy_updated
