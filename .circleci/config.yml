@@ -25,7 +25,8 @@ jobs:
       - image: geerlingguy/docker-ubuntu1604-ansible:latest
     steps:
       - checkout
-      - run: ansible-playbook -i .circleci/inventory .circleci/playbook.yml -e 'host_key_checking=False'
+      - run: ssh-keyscan -H 162.243.241.145 >> ~/.ssh/known_hosts
+      - run: ansible-playbook -i .circleci/inventory .circleci/playbook.yml
 
 workflows:
   version: 2
