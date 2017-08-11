@@ -25,6 +25,7 @@ jobs:
       - image: geerlingguy/docker-ubuntu1604-ansible:latest
     steps:
       - checkout
+      - run: mkdir -p ~/.ssh/
       - run: ssh-keyscan -H 162.243.241.145 >> ~/.ssh/known_hosts
       - run: ansible-playbook -i .circleci/inventory .circleci/playbook.yml
 
