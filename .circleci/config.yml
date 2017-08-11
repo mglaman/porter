@@ -25,7 +25,7 @@ jobs:
       - image: geerlingguy/docker-ubuntu1604-ansible:latest
     steps:
       - checkout
-      - run: ansible-playbook -i .circleci/inventory -e .circleci/playbook.yml
+      - run: ansible-playbook -i .circleci/inventory .circleci/playbook.yml
 
 workflows:
   version: 2
