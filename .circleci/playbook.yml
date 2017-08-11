@@ -1,0 +1,41 @@
+---
+- hosts: glamanation
+  become: no
+  tasks:
+    - name: Check out Drupal to the docroot.
+      git:
+        repo: "git@github.com:mglaman/porter.git"
+        version: "master"
+        update: true
+        force: yes
+        dest: "/var/www/porter"
+        accept_hostkey: true
+      register: deploy_repo_updated
+      become: no
+
+    - name: Check if a composer.json file is present.
+      stat: "path=/var/www/porter/web/composer.json"
+      register: deploy_composer_file
+
+    - name: Run composer install if composer.json is present.
+      composer:
+        command: install
+        working_dir: "/var/www/porter"
+      when: deploy_composer_file.stat.exists == true
+      become: no
+
+    - name: Define deploy_updated
+      set_fact:
+        deploy_updated: "{{ deploy_repo_updated.changed|default(false) }}"
+
+    - name: Rebuild cache.
+      command: "/usr/local/bin/drush cr -y -r /var/www/porter/web"
+      when: deploy_updated
+
+    - name: Import config.
+      command: "/usr/local/bin/drush cim -y -r /var/www/porter/web"
+      when: deploy_updated
+
+    - name: Run database updates.
+      command: "/usr/local/bin/drush updatedb -y -r /var/www/porter/web"
+      when: deploy_updated
